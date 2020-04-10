@@ -1,7 +1,7 @@
 # RESTful-API
 Building REST API using Python and Flask. 
 
-## REST Vs RESTful API
+## Comparison between REST and RESTful API
 
 **REST** (**RE**presentational **S**tate **T**ransfer) is basically an architectural style of development having some principles...
 
@@ -28,7 +28,10 @@ Building REST API using Python and Flask.
 
 #
 ### Directories
-1. **venv**: Virtual Environment for this repository which runs on Python version 3.8
+1. `venv`: Virtual Environment for this repository which runs on `Python 3.8`
 
-2. **JSON+SQLAlchemy**: Contains the code that creates the Flask REST API with JSON Web Token Authentication and SQLAlchemy.
+2. `JSON+SQLAlchemy`: Contains the code that creates the Flask REST API with JSON Web Token Authentication and SQLAlchemy.
 
+#
+### Dependencies
+```pip install -r requirements.txt```
