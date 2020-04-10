@@ -35,3 +35,25 @@ Building REST API using Python and Flask.
 #
 ### Dependencies
 ```pip install -r requirements.txt```
+
+#
+
+### Working with **curl** for rendering.
+
+* Alternatively, one also use `Postman` app
+
+```curl localhost:5000/``` : default is **GET** unless specified.
+
+```curl -v localhost:5000/``` : for *verbose mode*
+
+**NB** : With curl, you need to have two actively running terminals. 
+- One for running the flask app ```flask run```. 
+- Second terminal for the ```curl localhost:5000/```
+
+* e.g. For the second REST API in the directory RESTFUL_vs_Vanilla_Flask
+2nd terminal would look like this for the func `get_multiply10(num)` ```curl http://127.0.0.1:5000/multi/10``` to get (10*10)
+
+* Extract content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Alice", "password":"12345"}' http://127.0.0.1:5000/```
+
+### Summary
+* When using an extension like FLASK-RESTful, it simplifies code and code maintainability.
