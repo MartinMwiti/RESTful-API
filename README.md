@@ -53,7 +53,14 @@ Building REST API using Python and Flask.
 * e.g. For the second REST API in the directory RESTFUL_vs_Vanilla_Flask
 2nd terminal would look like this for the func `get_multiply10(num)` ```curl http://127.0.0.1:5000/multi/10``` to get (10*10)
 
-* Extract content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Alice", "password":"12345"}' http://127.0.0.1:5000/```
+* Post content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Steph", "password":"12345"}' http://127.0.0.1:5000/```
 
+#
+### Initiating the SQL database (JSON+SQLAlchemy)
+- In the `Terminal`
+1. ```python```
+2. ```from vanilla_flask import db```
+3. ```db.create_all()```
+#
 ### Summary
 * When using an extension like FLASK-RESTful, it simplifies code and code maintainability.
