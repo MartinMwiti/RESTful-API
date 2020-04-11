@@ -56,7 +56,7 @@ Building REST API using Python and Flask.
 * Post content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Steph", "password":"12345"}' http://127.0.0.1:5000/```
 
 #
-### Initiating the SQL database (JSON+SQLAlchemy)
+### Initiating the SQL database (SQLAlchemy)
 - In the `Terminal`
 1. ```python```
 2. ```from vanilla_flask import db```
