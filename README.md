@@ -30,7 +30,7 @@ Building REST API using Python and Flask.
 ### Directories
 1. `venv`: Virtual Environment for this repository which runs on `Python 3.8`
 
-2. `JSON+SQLAlchemy`: Contains the code that creates the Flask REST API with JSON Web Token Authentication and SQLAlchemy.
+2. `SQLAlchemy`: Contains the code that creates the Flask REST API with  SQLAlchemy.
 
 #
 ### Dependencies
