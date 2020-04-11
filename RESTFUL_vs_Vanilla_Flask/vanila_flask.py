@@ -17,5 +17,6 @@ def get_multiply10(num):
         return jsonify({'result': num*10})
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)

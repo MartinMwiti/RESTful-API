@@ -12,6 +12,7 @@ class Home(Resource):
         return {'You sent': data}, 201
 
 
+
 class Multi(Resource):
     def get(self, num):
         return {'result': num*10}
