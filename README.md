@@ -38,7 +38,7 @@ Building REST API using Python and Flask.
 
 #
 
-### Working with **curl** for rendering.
+### Working with *curl* and *JSON* for rendering.
 
 * Alternatively, one also use `Postman` app
 
@@ -51,9 +51,13 @@ Building REST API using Python and Flask.
 - Second terminal for the ```curl localhost:5000/```
 
 * e.g. For the second REST API in the directory RESTFUL_vs_Vanilla_Flask
-2nd terminal would look like this for the func `get_multiply10(num)` ```curl http://127.0.0.1:5000/multi/10``` to get (10*10)
+2nd terminal would look like this for the func `get_multiply10(num)` ```curl http://localhost:5000/multi/10``` to get (10*10)
 
-* Post content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Steph", "password":"12345"}' http://127.0.0.1:5000/```
+* Post content: ```curl -H 'Content-Type: application/json' -X POST -d '{"name": "Steph", "password":"12345"}' http://localhost:5000/```
+
+* Delete content: ```curl -X "DELETE" http://localhost:5000/```
+
+* Update content: ```curl -X PUT -H "Content-Type: application/json" -d '{"key1":"value"}' "http://localhost:5000/"```
 
 #
 ### Initiating the SQL database (SQLAlchemy)
