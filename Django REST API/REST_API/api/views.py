@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-
+# Can be applied to get/retrieve all stored data in a database in JSON format
 class employeeList(APIView):
 
     def get(self, request): # GET method
