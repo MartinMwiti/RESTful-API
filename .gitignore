@@ -1,4 +1,4 @@
 .dict/
 .vscode/
 __pycache__/
-venv2/
+venv/
