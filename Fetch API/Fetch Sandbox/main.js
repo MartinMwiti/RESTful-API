@@ -1,5 +1,6 @@
 document.getElementById('getText').addEventListener('click', getText)
 document.getElementById('getUsers').addEventListener('click', getUsers)
+document.getElementById('getPosts').addEventListener('click', getPosts)
 
 function getText() {
     fetch('sample.txt') // fetch returns a promise
@@ -33,6 +34,27 @@ function getUsers() {
                 `;
             });
             document.getElementById('output').innerHTML=output;
-        });
+        })
+        .catch(err=>console.log(err))
+}
 
+
+// from jsonplaceholder -> Routes -> /posts
+function getPosts() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+
+        .then(data => {
+            let output = '<h2>Posts</h2>'
+            data.forEach(function(posts) {
+                output += ` 
+                <div>
+                    <h3>${posts.title}</h3>
+                    <p>${posts.body}</p>
+                </div>
+                `;
+            });
+            document.getElementById('output').innerHTML = output;
+        })
+        .catch(err => console.log(err))
 }
