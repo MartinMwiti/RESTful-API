@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 
 # Third party imports
+from rest_framework.permissions import isAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -10,6 +11,9 @@ from .models import Post
 
 
 class TestView(APIView):
+
+    permission_classes = [isAuthenticated]
+
     def get(self, request, *args, **kwargs):
         qs = Post.objects.all()
         # post = qs.first() # To get the 1st instance
