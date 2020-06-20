@@ -12,7 +12,7 @@ from .models import Post
 
 class TestView(APIView):
 
-    # permission_classes = [isAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         qs = Post.objects.all()

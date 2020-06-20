@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'rest_framework.authtoken', # run migrate after adding this
+    'rest_framework.authtoken', 
+    'rest_auth',# run migrate after adding this
     'core',
 ]
 
