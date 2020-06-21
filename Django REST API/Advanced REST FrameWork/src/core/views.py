@@ -12,14 +12,50 @@ from .serializers import PostSerializer
 from .models import Post
 
 
+# The more you go down, the more the code but all achieve the same objective.
+'''Method 0-Shortest code'''
+class PostCreateView(generics.CreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+        # I don't have to specify any methods since i'm inheriting from 'CreateAPIView'
+
+'''The above class only handles Post request. To add Get request you can do it in two ways'''
+
+# 1st - shortest Code ListCreateAPIView that executes both 'GET' and 'POST' requests.
+class PostListCreateView(generics.ListCreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+
+# 2nd - More Code
+class PostCreateView(mixins.ListModelMixin, generics.CreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+
+
+
+
 '''METHOD 1'''
-class PostView(mixins.ListModelMixin, generics.GenericAPIView): # MIXINS should go first
+class PostView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView): # MIXINS should go first
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
     def get(self, request, *args, **kwargs): # this func is already build. click on the ListModelMixins. This achieves the same result as the Method 2  with extra func such as pagination    
-        return self.list(self, request, *args, **kwargs)
+        return self.list(request, *args, **kwargs)
 
+   
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+
+    # # customize/overide by say send email login
+    # def perform_create(self, serializer):
+    #     # Send an email logic
+    #     serializer.save()
 
 
 
@@ -56,6 +92,6 @@ class PostView(mixins.ListModelMixin, generics.GenericAPIView): # MIXINS should 
 #         'name': 'Martin',
 #         'age': 26
 #     }
-#     # Here i'm passing dict. To pass another type say list. Add 'safe=False' next to data val inside the JsonResponse.
+#       # Here i'm passing dict. To pass another type say list. Add 'safe=False' next to data val inside the JsonResponse.
 #     return JsonResponse(data)
-#     #  You can view the JSON data by runing the server or use the route say, 'curl http://localhost:8000' if the route was set to blank 
+#        #  You can view the JSON data by runing the server or use the route say, 'curl http://localhost:8000' if the route was set to blank 
